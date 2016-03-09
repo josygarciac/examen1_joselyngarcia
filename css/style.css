@@ -1,0 +1,12 @@
+body{
+  background-color: #ecf0f1;
+}
+th, td{
+  text-align: center;
+}
+textarea{
+  resize: none;
+}
+table{
+  word-break: break-word;
+}

@@ -1,22 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html" ng-app="myBank">
 <head>
-    <meta charset="UTF-8">
-    <title>Examen 1 | Cuenta Bancaria</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="Joselyn Garcia">
+  
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <title>Cuenta Bancaria</title>
 </head>
-<body>
+<body ng-controller="PrincipalCtrl as principal">
+	<div ui-view></div>
 
-<div ng-app="todo">
-    <div ng-view></div>
-</div>
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script src="js/librerias/angular-route.min.js"></script>	
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js" /></script>
+  <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js" /></script>
+	<script type="text/javascript" src="js/app.js"></script>
 
-<script src="js/angular.min.js"></script>
-<script src="js/angular-route.min.js"></script>
-<script src="js/app.js"></script>
-<script src="js/persistencia/app.js"></script>
-<script src="js/persistencia/PersistenciaService.js"></script>
-<script src="js/todo/DetalleController.js"></script>
-<script src="js/todo/IndiceController.js"></script>
+	 <!-- Controladores -->
+  <script type="text/javascript" src="views/registro/registro.controller.js"></script>
+  <script type="text/javascript" src="views/detalle/detalle.controller.js"></script>
+  <script type="text/javascript" src="views/agregar/agregar.controller.js"></script>
+  <script type="text/javascript" src="views/crear/crear.controller.js"></script>
+
+  <!-- Servicios -->
+  <script type="text/javascript" src="servicios/transacciones.services.js"></script>
 </body>
 </html>
