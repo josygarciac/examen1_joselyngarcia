@@ -1,12 +1,23 @@
 body{
   background-color: #ecf0f1;
 }
+
 th, td{
   text-align: center;
 }
+
 textarea{
   resize: none;
 }
+
 table{
   word-break: break-word;
+}
+
+.header{
+	background-color: #003c86;/* #003c86,  #c0392b*/
+}
+
+.logo img{
+	float: left;
 }
