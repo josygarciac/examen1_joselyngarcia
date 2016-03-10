@@ -20,6 +20,7 @@ angular
       RegistroService.add(newRegistro);
       // Refreshing the state of the constructor
       registro.resetForm(); 
+      console.log(registro.editedRegistro);
     };
 
     /**
