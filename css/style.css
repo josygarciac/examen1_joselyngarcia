@@ -21,3 +21,11 @@ table{
 .logo img{
 	float: left;
 }
+
+li{
+	list-style: none;
+	float: left;
+	padding: 30px;
+	color: #003c86;
+	text-align: center;
+}
