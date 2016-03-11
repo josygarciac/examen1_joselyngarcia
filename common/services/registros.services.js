@@ -1,5 +1,5 @@
 /**
- * Duties view services
+ * Registros view services
  */
 
 angular
@@ -10,6 +10,8 @@ angular
     //Initialize of localstorage defaults
     $localStorage = $localStorage.$default({
       registros: [],
+      movimiento: 1,
+      saldo: 0,
       id: 0
     });
     

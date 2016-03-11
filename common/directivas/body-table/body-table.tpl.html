@@ -1,0 +1,10 @@
+<td>{{bodyItem.dueno}}</td>
+<td>{{bodyItem.tipo}}</td>
+<td>{{bodyItem.moneda}}</td>
+<td><a ui-sref="detalle({ id: bodyItem.id })">Ver movimientos</a></td>
+<td>{{bodyItem.saldo}}</td>
+<td class="actions">
+  <button class="btn btn-xs btn-success" data-toggle="modal" data-target="#myModal" ng-click="registro.setCurrentRegistro(bodyItem.id)">
+    <span class="glyphicon glyphicon-pencil"></span>
+  </button>
+</td>

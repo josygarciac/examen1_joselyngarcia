@@ -1,46 +1,68 @@
 <header-main></header-main>
+<menu-main></menu-main>
 <main id="contenido" class="contenido">	
 	<section id="bank-accounts">
 		<div class="row">
 	    <div class="col-sm-8">
 	    	<div class="page-header text-center">
-	      	<h1 class="text-center">Mi cuenta</h1>
+	      	<h1>Mi cuenta</h1>
 	      </div>
 
-				<menu-main></menu-main>
+				<div class="container-fluid">
+		    	<div class="container">
+						<div class="row">
+							<form class="col-md-8 col-md-offset-2" ng-submit="registro.add()" name="registro.Form" autocomplete="off">
+		            <div class="form-group">
+		            	<label for="registro-dueno" class="form-control-label">Due&ntilde;o</label>
+		              <input type="text" ng-model="registro.editedRegistro.dueno" ng-required="true" name="dueno" class="form-control input-lg" placeholder="Due&ntilde;o de la cuenta"/>
+		            </div>
+		            <p class="alert alert-danger" ng-show="!registro.editedRegistro.dueno && registro.Form.dueno.$touched && !registro.Form.$submitted">
+		              Debe llenar este campo.
+		            </p>
+		            <div class="form-group">
+		            	<label for="registro-moneda">Moneda</label>
+		              <select id="registro-moneda" ng-model="registro.editedRegistro.moneda" ng-required="true" ng-options="moneda for moneda in registro.monedas" class="form-control">
+		                <option value="">Por favor seleccione una opci&oacute;n</option>
+		              </select>
+		            </div>
+		            <div class="form-group">
+		            	<label for="registro-tipo">Tipo</label>
+		              <select id="registro-tipo" ng-model="registro.editedRegistro.tipo" ng-required="true" ng-options="tipo for tipo in registro.tipos" class="form-control">
+		                <option value="">Por favor seleccione una opci&oacute;n</option>
+		              </select>
+		            </div>
+		            <!-- Buttons div shows only if currentDuty === null -->
+		            <div ng-if="!registro.currentRegistro">
+		              <button modal="close" class="btn btn-primary" type="submit" ng-disabled="!registro.Form.$valid">Agregar cuenta</button>
+		            </div>
+		        	</form>
+						</div>
 
-				<div class="row">
-					<form class="col-md-8 col-md-offset-2" ng-submit="registro.add()" name="registro.Form" autocomplete="off">
-            <div class="form-group">
-            	<label for="registro-dueno" class="form-control-label">Due&ntilde;o</label>
-              <input type="text" ng-model="registro.editedRegistro.dueno" ng-required="true" name="dueno" class="form-control input-lg" placeholder="Due&ntilde;o de la cuenta"/>
-            </div>
-            <p class="alert alert-danger" ng-show="!registro.editedRegistro.dueno && registro.Form.dueno.$touched && !registro.Form.$submitted">
-              Por favor llene este campo.
-            </p>
-            <div class="form-group">
-            	<label for="registro-moneda">Moneda</label>
-              <select id="registro-moneda" ng-model="registro.editedRegistro.moneda" ng-required="true" ng-options="moneda for moneda in registro.monedas" class="form-control">
-                <option value="">Please select...</option>
-              </select>
-            </div>
-            <div class="form-group">
-            	<label for="registro-tipo">Tipo</label>
-              <select id="registro-tipo" ng-model="registro.editedRegistro.tipo" ng-required="true" ng-options="tipo for tipo in registro.tipos" class="form-control">
-                <option value="">Please select...</option>
-              </select>
-            </div>
-            <!-- Buttons div shows only if currentDuty === null -->
-            <div ng-if="!registro.currentRegistro">
-              <button modal="close" class="btn btn-primary" type="submit" ng-disabled="!registro.Form.$valid">Agregar cuenta</button>
-            </div>
-        	</form>
-				</div>
-				<div class="row">
-					<p class="text-center" ng-if="registro.registros.length < 1">(There aren't duties!)</p>
-					<p>{{registro.dueno}}</p>
-				</div>
-	    </div>
+						<div class="row">
+							<div class="col-md-12">
+					    	<div class="page-header text-center">
+									<p class="text-center" ng-if="registro.registros.length < 1">(No tiene cuentas asociadas)</p>
+									<table class="table table-bordered" ng-if="registro.registros.length >= 1">
+										<thead>
+											<tr>
+												<th class="col-md-2">Due&ntilde;o</th>
+												<th class="col-md-2">Tipo de cuenta</th>
+												<th class="col-md-2">Moneda</th>
+												<th class="col-md-2">Movimientos</th>
+												<th class="col-md-2">Saldo</th>
+												<th class="col-md-1">Editar</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr body-table ng-repeat="bodyItem in registro.registros | filter:registro.search  | orderBy:registro.orderCol:registro.direction" registros="registro.registros"></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+			    </div>
+    		</div>
+    	</div>
     </div>
 	</section>
 </main>

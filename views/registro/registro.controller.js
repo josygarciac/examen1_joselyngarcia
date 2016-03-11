@@ -61,7 +61,7 @@ angular
      * Function to update the data of an object
      */
     function updateRegistro() {
-      var fields = ['dueno', 'moneda', 'tipo', 'id'];
+      var fields = ['dueno', 'moneda', 'tipo', 'id', 'movimiento', 'saldo'];
 
       fields.forEach(function(field) {
         registro.currentRegistro[field] = registro.editedRegistro[field];  //Copying the values from editedRegistro to currentRegistro
