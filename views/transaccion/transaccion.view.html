@@ -1,0 +1,32 @@
+<menu-main></menu-main>
+<main id="contenido" class="contenido">
+	<section id="bank-accounts">
+		<div class="row">
+	    <div class="col-sm-8">
+	    	<div class="page-header text-center">
+	      	<h1>Detalle de la transacci&oacute;n # {{especifico.actualEspecifico.id}} </h1>
+	      </div>
+	      <div class="container-fluid">
+		    	<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+	      				<table class="table table-bordered" ng-if="especifico.actualEspecifico.length >= 1">
+									<thead>
+										<tr>
+											<th class="col-md-2">Fecha</th>
+											<th class="col-md-2">Detalle</th>
+											<th class="col-md-2">Monto</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr transaction-table ng-repeat="transactionItem in especifico.transacciones | filter:especifico.search  | orderBy:especifico.orderCol:especifico.direction" transacciones="especifico.transacciones"></tr>
+									</tbody>
+								</table>
+	      			</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>

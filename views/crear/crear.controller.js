@@ -20,7 +20,6 @@ angular
       TransaccionesService.add(newTransaccion);
       // Refreshing the state of the constructor
       transaccion.resetForm(); 
-      console.log(transaccion.editedTransaccion);
     };
 
     /**
