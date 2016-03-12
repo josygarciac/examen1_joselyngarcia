@@ -1,0 +1,35 @@
+<menu-main></menu-main>
+<main id="contenido" class="contenido">
+	<section id="bank-accounts">
+		<div class="row">
+	    <div class="col-sm-8">
+	    	<div class="page-header text-center">
+	      	<h1>Agregar transacci&oacute;n</h1>
+	      </div>
+	    </div>
+			<div class="container-fluid">
+				<div class="container">
+					<div class="row">
+						<form class="col-md-8 col-md-offset-2" ng-submit="crear.add()" name="crear.Form" autocomplete="off">
+			        <div class="form-group">
+			        	<label for="crear-fecha" class="form-control-label">Fecha</label>
+			          <input type="date" ng-model="crear.editedCrear.fecha" ng-required="true" name="fecha" class="form-control input-lg"/>
+			        </div>
+			        <div class="form-group">
+			        	<label for="crear-monto">Monto</label>
+			          <input type="text" ng-model="crear.editedCrear.monto" class="form-control" id="crear-monto" placeholder="Digite el monto" ng-required="true" name="monto"/>
+			        </p>
+			        </div>
+			        <div class="form-group">
+			        	<label for="crear-detalle">Detalle</label>
+			          <textarea type="text" ng-model="crear.editedCrear.detalle" class="form-control" id="crear-detalle" placeholder="Escriba el detalle de la transacci&oacute;n" rows="4" ng-required="true" name="detalle"/></textarea>
+			        </div>
+			        <div>
+			          <button modal="close" class="btn btn-primary" type="submit" ng-disabled="!crear.Form.$valid">Agregar transacci&oacute;n</button>
+			        </div>
+			    	</form>
+					</div>
+				</div>
+			</div>
+	</section>
+</main>

@@ -20,7 +20,6 @@ angular
       RegistroService.add(newRegistro);
       // Refreshing the state of the constructor
       registro.resetForm(); 
-      console.log(registro.editedRegistro);
     };
 
     /**
@@ -61,7 +60,7 @@ angular
      * Function to update the data of an object
      */
     function updateRegistro() {
-      var fields = ['dueno', 'moneda', 'tipo', 'id', 'movimiento', 'saldo'];
+      var fields = ['dueno', 'moneda', 'tipo', 'id'];
 
       fields.forEach(function(field) {
         registro.currentRegistro[field] = registro.editedRegistro[field];  //Copying the values from editedRegistro to currentRegistro

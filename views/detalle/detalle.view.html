@@ -1,0 +1,33 @@
+<menu-main></menu-main>
+<main id="contenido" class="contenido">
+	<section id="bank-accounts">
+		<div class="row">
+	    <div class="col-sm-8">
+	    	<div class="page-header text-center">
+	      	<h1>Bienvenido(a), {{detalle.actualRegistro.dueno}}</h1>
+	      </div>
+	      <div class="container-fluid">
+		    	<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+	      				<p class="text-center"><a ui-sref="crear({ id: detalle.actualRegistro.id })">Registrar transacci&oacute;n</a></p>
+	      				<table class="table table-bordered" ng-if="crear.detalle.length >= 1">
+									<thead>
+										<tr>
+											<th class="col-md-2">Fecha</th>
+											<th class="col-md-2">Detalle</th>
+											<th class="col-md-2">Monto</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr transaction-table ng-repeat="transactionItem in detalle.transacciones | filter:detalle.search  | orderBy:detalle.orderCol:detalle.direction" transacciones="detalle.transacciones"></tr>
+									</tbody>
+								</table>
+	      			</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>

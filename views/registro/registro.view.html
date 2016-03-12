@@ -1,11 +1,10 @@
-<header-main></header-main>
 <menu-main></menu-main>
 <main id="contenido" class="contenido">	
 	<section id="bank-accounts">
 		<div class="row">
 	    <div class="col-sm-8">
 	    	<div class="page-header text-center">
-	      	<h1>Mi cuenta</h1>
+	      	<h1>Mis cuentas</h1>
 	      </div>
 
 				<div class="container-fluid">
@@ -31,7 +30,7 @@
 		                <option value="">Por favor seleccione una opci&oacute;n</option>
 		              </select>
 		            </div>
-		            <!-- Buttons div shows only if currentDuty === null -->
+		            <!-- Buttons div shows only if currentRegistro === null -->
 		            <div ng-if="!registro.currentRegistro">
 		              <button modal="close" class="btn btn-primary" type="submit" ng-disabled="!registro.Form.$valid">Agregar cuenta</button>
 		            </div>
@@ -49,8 +48,7 @@
 												<th class="col-md-2">Tipo de cuenta</th>
 												<th class="col-md-2">Moneda</th>
 												<th class="col-md-2">Movimientos</th>
-												<th class="col-md-2">Saldo</th>
-												<th class="col-md-1">Editar</th>
+												<th class="col-md-2">Acciones</th>
 											</tr>
 										</thead>
 										<tbody>

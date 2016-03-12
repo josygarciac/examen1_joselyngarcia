@@ -22,16 +22,16 @@
         controllerAs: 'detalle'
       })
       .state('crear', {
-        url: '/crear',
+        url: '/crear/:id',
         templateUrl: 'views/crear/crear.view.html',
         controller: 'CrearController',
         controllerAs: 'crear'
       })
-      .state('agregar', {
-        url: '/agregar',
-        templateUrl: 'views/agregar/agregar.view.html',
-        controller: 'AgregarController',
-        controllerAs: 'agregar'
+      .state('transaccion', {
+        url: '/transaccion/:id',
+        templateUrl: 'views/transaccion/transaccion.view.html',
+        controller: 'TransaccionController',
+        controllerAs: 'transaccion'
       });
       
       $urlRouterProvider.otherwise('/');
